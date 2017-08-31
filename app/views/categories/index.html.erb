@@ -1,0 +1,9 @@
+<h1>Job Categories</h1>
+
+<ul>
+  <% @categories.each do |category| %>
+  <li  <%= category.id %>>
+    <%= link_to "Delete", category_path(category), method: :delete, data: { confirm: 'Are you sure you want to delete this category?' } %>
+    <%= link_to "Edit", edit_category_path(category) %>
+  </li>
+</ul>
