@@ -18,9 +18,9 @@ describe "User creates a new job" do
 
     expect(current_path).to eq("/companies/#{company.id}/jobs/#{job.id}")
     expect(page).to have_content(company.name)
-    expect(page).to have_content("Developer")
-    expect(page).to have_content("80")
-    expect(page).to have_content("Denver")
+    expect(page).to have_content(job.title)
+    expect(page).to have_content(job.level_of_interest)
+    expect(page).to have_content(job.city)
     expect(page).to have_content(category.title)
   end
 end

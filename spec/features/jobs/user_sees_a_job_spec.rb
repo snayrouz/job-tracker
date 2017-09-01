@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe "User sees a specific job" do
-  scenario "a user sees a job for a specific company, along with comments" do
+  scenario "a user sees a job for a specific company" do
     company = create(:company, :with_jobs, job_count: 1)
-    job = company.jobs.last
+    job = company.jobs
 
     visit company_job_path(company, job)
 
