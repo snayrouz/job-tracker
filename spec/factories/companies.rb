@@ -4,4 +4,10 @@ FactoryGirl.define do
       "Turing #{n}"
     end
   end
+
+  trait :with_jobs do
+    transient do
+      job_count 3
+    end
+  end
 end
