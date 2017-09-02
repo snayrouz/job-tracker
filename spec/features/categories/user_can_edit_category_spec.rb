@@ -8,7 +8,7 @@ RSpec.feature "User sees all categories" do
 
     click_on "Edit"
     fill_in "category[title]", with: "Healthcare"
-    click_on "Update category"
+    click_on "Update Category"
 
     expect(current_path).to eq(categories_path)
     expect(page).to have_content("Healthcare")

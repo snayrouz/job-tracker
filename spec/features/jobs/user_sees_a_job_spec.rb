@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User sees a specific job" do
-  scenario "a user sees a job for a specific company" do
+  xscenario "a user sees a job for a specific company" do
     company = create(:company, :with_jobs, job_count: 1)
     job = company.jobs
 
