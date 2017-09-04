@@ -1,4 +1,5 @@
 class Comment < ApplicationRecord
-  validates :content, presence: true
+  validates_presence_of :content
+
   belongs_to :job
 end
