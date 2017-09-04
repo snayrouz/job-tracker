@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
     redirect_to job_path(@comment.job)
   end
+  
 
   private
 
