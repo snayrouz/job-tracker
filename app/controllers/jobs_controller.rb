@@ -1,8 +1,18 @@
 class JobsController < ApplicationController
 
   def index
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
+    if params[:sort] == 'location'
+      @sorted_jobs = Job.sort_by_location
+      render :sorted
+    elsif params[:sort] == 'interest'
+      @sorted_jobs = Job.sort_by_interest
+      render :sorted
+    elsif params[:location]
+      @jobs = Job.filter_by_location(params[:location])
+      render :filtered
+    else
+      @jobs = Job.all
+    end
   end
 
   def new
@@ -26,7 +36,7 @@ class JobsController < ApplicationController
     @comment = Comment.new
     @comment.job_id = @job.id
   end
-  
+
   def edit
     @company = Company.find(params[:company_id])
     @job = Job.find(params[:id])

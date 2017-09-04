@@ -1,0 +1,17 @@
+<h1>Jobs in <%= params[:location] %></h1>
+<table class="table text-left table-striped table-bordered">
+  <thead>
+    <th>Job Title</th>
+    <th>Description</th>
+    <th>Level of Interest</th>
+    <th>Company Paage</th>
+    <tbody>
+  <tr><% @jobs.each do |job| %></tr>
+      <td><%= job.title %></td>
+      <td>Description: <%= job.description %></td>
+      <td>Level of Interest: <%= job.level_of_interest %></td>
+      <td><%= link_to job.company.name, company_path(job.company) %></td>
+    <% end %>
+    </tbody>
+  </thead>
+</table>

@@ -1,5 +1,41 @@
-<h2>Count of Jobs (level of interest):</h2>
+<table class="table table-striped table-bordered text-left">
+  <thead><strong class="text-left">Jobs by Level of Interest</strong></thead>
+  <tr>
+    <th>Level of Interest</th>
+    <th>Number of Jobs</th>
+  </tr>
+  <% @interest_count.each do |level, count| %>
+    <tr class="<%= "level_of_interest_#{level}" %>">
+      <td><%= level %></td>
+      <td><%= count %></td>
+    </tr>
+  <% end %>
+</table>
 
-<h2>Top Three Companies (level of interest):</h2>
+<table class="table table-striped table-bordered text-left">
+  <thead><strong>Top 3 Companies by Level of Interest</strong></thead>
+  <tr>
+    <th>Company Name</th>
+    <th>Average Interest</th>
+  </tr>
+  <% @top_companies.each do |data| %>
+    <tr>
+      <td><%= "#{data[0]}:" %></td>
+      <td><%= data[1] %></td>
+    </tr>
+  <% end %>
+</table>
 
-<h2>Count of Jobs (city):</h2>
+<table class="table table-striped table-bordered text-left">
+  <thead><strong>Jobs by Location</strong></thead>
+  <tr>
+    <th>Location</th>
+    <th>Number of Jobs</th>
+  </tr>
+  <% @location_count.each do |city, count| %>
+    <tr>
+      <td><%= link_to city, "/jobs/?location=#{city}"%></td>
+      <td><%= count %></td>
+    </tr>
+  <% end %>
+</table>
