@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'comapnies#index'
+  root to: 'index#index'
 
   resources :companies do
     resources :jobs
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   get '/dashboard', to: 'dashboard#index'
+
 
 end
   # The priority is based upon order of creation: first created -> highest priority.
