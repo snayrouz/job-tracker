@@ -12,6 +12,8 @@
 </thead>
 </table>
 
+  <%= render partial: 'companies/contact', collection: @company.contacts %>
+  <%= render partial: 'contacts/form' %>
+<br>
 
-<%= render partial: 'companies/contact', collection: @company.contacts %>
-<%= render partial: 'contacts/form' %>
+<buttontype="button" class="btn btn-info"><%= link_to "New job", new_company_job_path(@company, @job) %></button><br>

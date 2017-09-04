@@ -1,18 +1,18 @@
 <h1>All Companies</h1>
+
 <div class="text-left">
-
-<button type="button" class="btn btn-link"><%= link_to "New company", new_company_path %></button>
-
-<ul>
-  <br>
-  <% @companies.each do |company| %>
-  <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %><br>
-    <button type="button" class="btn btn-info"><%= link_to "Edit", edit_company_path(company) %></button>
-    <br>
-    <button type="button" class="btn btn-warning"><%= link_to "Delete", company_path(company), method: "delete", data: { confirm: 'Are you sure you want to delete this company?' } %></button>
-    <br>
-  </li><br>
-  <% end %>
-</ul>
+  <button type="button" class="btn btn-info"><%= link_to "New company", new_company_path %></button>
 </div>
+
+<table class="table text-left table-striped table-bordered">
+  <thead>
+    <th>Company Name</th>
+    <tbody>
+  <tr><% @companies.each do |company| %>  </tr>
+        <td><%= link_to company.name, company_path(company) %></td><br>
+        <td><button type="button" class="btn btn-info"><%= link_to "Edit", edit_company_path(company) %></button></td>
+        <td><button type="button" class="btn btn-warning"><%= link_to "Delete", company_path(company), method: "delete", data: { confirm: 'Are you sure you want to delete this company?' } %></button></td>
+      <% end %>
+    </tbody>
+  </thead>
+</table>

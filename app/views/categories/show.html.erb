@@ -1,10 +1,11 @@
-<div class="text-left">
+<table class="table table-striped text-left table-bordered">
+<thead>
+  <th><%= @category.title %></th>
+    <tbody>
 
-<strong><%= @category.title %></strong>
-<br>
-<ul>
-  <% @category.jobs.each do |job| %>
-    <li><%= link_to job.title, company_job_path(job.company, job) %></li>
-  <% end %>
-</ul>
-</div>
+  <tr><% @category.jobs.each do |job| %></tr>
+    <td><%= link_to job.title, company_job_path(job.company, job) %></td>
+      <% end %>
+  </tbody>
+</thead>
+</table>

@@ -1,16 +1,19 @@
 <h1>Job Categories</h1>
+
 <div class="text-left">
+  <button type="button" class="btn btn-info"><%= link_to "New category", new_category_path %></button>
+</div>
 
-<button type="button" class="btn btn-link"><%= link_to "New category", new_category_path %></button>
-
-<ul>
-  <br>
-  <% @categories.each do |category| %>
-  <li  <%= category.id %>>
-    <%= link_to category.title, category_path(category) %><br>
-    <button type="button" class="btn btn-info"><%= link_to "Edit", edit_category_path(category) %></button><br>
-    <button type="button" class="btn btn-warning"><%= link_to "Delete", category_path(category), method: :delete, data: { confirm: 'Are you sure you want to delete this category?' } %></button><br>
+<table class="table text-left table-striped table-bordered">
+  <thead>
+    <th>Category</th>
+    <tbody>
+  <tr><% @categories.each do |category| %></tr>
+    <td><%= link_to category.title, category_path(category) %><br></td>
+    <td><button type="button" class="btn btn-info"><%= link_to "Edit", edit_category_path(category) %></button></td>
+    <td><button type="button" class="btn btn-warning"><%= link_to "Delete", category_path(category), method: :delete, data: { confirm: 'Are you sure you want to delete this category?' } %></button></td>
   </li><br>
   <% end %>
-</ul>
-</div>
+</tbody>
+</thead>
+</table>
