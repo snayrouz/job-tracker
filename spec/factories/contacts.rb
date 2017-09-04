@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :contact do
-    full_name "MyString"
+    name "MyString"
     position "MyString"
     email "MyString"
-    company nil
+    job nil
   end
 end

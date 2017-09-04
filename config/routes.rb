@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+  root to: 'comapnies#index'
 
   resources :companies do
     resources :jobs
+    resources :contacts
   end
 
   resources :categories
 
   resources :jobs do
-    resources :comments
+    resources :comments, only: [:create]
   end
 
 end

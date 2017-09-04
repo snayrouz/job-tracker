@@ -9,10 +9,6 @@ class CommentsController < ApplicationController
     redirect_to job_path(@comment.job)
   end
 
-  def show
-
-  end
-
   private
 
   def comment_params
