@@ -5,7 +5,7 @@ RSpec.feature "User can delete a category" do
     category = create(:category)
 
     visit categories_path
-    click_on "Delete"
+    click_button "Delete"
 
     expect(page).to_not have_content category
   end

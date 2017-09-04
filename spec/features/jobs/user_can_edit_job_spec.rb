@@ -7,7 +7,7 @@ RSpec.feature "User edits an existing job" do
 
     visit company_job_path(company, job)
 
-    click_on "Edit Job"
+    click_button "Edit"
     fill_in "job[title]", with: "Bus Driver"
     click_on "Update Job"
 

@@ -7,7 +7,7 @@ RSpec.feature "User can delete a job" do
 
     visit company_job_path(company, job)
 
-    click_on "Delete Job"
+    click_button "Delete Job"
 
     expect(page).to_not have_content job.title
   end

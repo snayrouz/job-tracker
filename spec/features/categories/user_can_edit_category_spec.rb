@@ -6,7 +6,7 @@ RSpec.feature "User sees all categories" do
 
     visit categories_path
 
-    click_on "Edit"
+    click_button "Edit"
     fill_in "category[title]", with: "Healthcare"
     click_on "Update Category"
 
