@@ -1,6 +1,18 @@
-<div>
-  <h4>Contact:</h4>
-  <p> <%= contact.name %></p>
-  <p> <%= contact.position %></p>
-  <p> <%= contact.email %></p>
-</div>
+<table class="table table-striped text-left table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td><%= contact.name %></td>
+      <td><%= contact.position %></td>
+      <td><%= contact.email %></td>
+
+    </tr>
+  </tbody>
+</table>

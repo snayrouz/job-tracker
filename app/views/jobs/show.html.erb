@@ -1,24 +1,30 @@
-Title: <%= @job.title %>
-<br>
+<table class="table table-striped text-left table-bordered">
+  <thead>
+    <tr>
+      <th>Title:</th>
+      <th>Description:</th>
+      <th>Level of Interest:</th>
+      <th>City:</th>
+      <th>Company:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @job.title %></td>
+      <td><%= @job.description %></td>
+      <td><%= @job.level_of_interest %></td>
+      <td><%= @job.city %></td>
+      <td><%= link_to @job.company.name, company_path(@job.company) %></td>
+    </tr>
+  </tbody>
+</table>
 
-Description: <%= @job.description %>
-<br>
+<h4 class="text-left">Comments (<%= @job.comments.size %>)</h4>
+  <%= render partial: 'jobs/comment', collection: @job.comments.reverse %>
+  <%= render partial: 'comments/form' %><br>
 
-Level of Interest: <%= @job.level_of_interest %>
-<br>
+<div class="text-left">
+  <button type="button" class="btn btn-info"><%= link_to "Edit Job", edit_company_job_path(@job.company) %></button>
 
-City: <%= @job.city %>
-<br>
-
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
-<br>
-
-
-<h3>Comments (<%= @job.comments.size %>)</h3>
-<%= render partial: 'jobs/comment', collection: @job.comments.reverse %>
-<%= render partial: 'comments/form' %><br>
-
-<%= link_to "Edit Job", edit_company_job_path(@job.company) %>
-<br>
-
-<%= link_to "Delete Job", company_job_path(@job.company, @job), method: :delete, data: { confirm: 'Are you sure you want to delete this job?' } %>
+  <button type="button" class="btn btn-warning"><%= link_to "Delete Job", company_job_path(@job.company, @job), method: :delete, data: { confirm: 'Are you sure you want to delete this job?' } %></button>
+</div>

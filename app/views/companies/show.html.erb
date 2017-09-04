@@ -1,8 +1,17 @@
-All Jobs for <strong><%= @company.name %></strong>
+<h2>All Jobs for <%= @company.name %></h2>
 
-<% @company.jobs.each do |job| %>
-  <ul><%= link_to job.title, company_job_path(@company, job) %></ul>
-<% end %>
+<table class="table text-center">
+<thead>
+  <tbody>
+    <tr>
+      <% @company.jobs.each do |job| %>
+        <td><%= link_to job.title, company_job_path(@company, job) %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</thead>
+</table>
+
 
 <%= render partial: 'companies/contact', collection: @company.contacts %>
 <%= render partial: 'contacts/form' %>
