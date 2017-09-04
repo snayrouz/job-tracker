@@ -1,0 +1,22 @@
+<h1>All Jobs Sorted By <%= params[:sort].capitalize %></h1>
+
+<table class="table text-left table-striped table-bordered">
+  <thead>
+    <tr>
+      <% @sorted_jobs.each do |key, jobs| %>
+        <th>Interest Level <%= "#{key}:" %><th>
+        <th>City</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <% jobs.each do |job| %>
+          <td><%= link_to job.title, job_path(job)%></td>
+          <td><%= link_to job.company.name, company_path(job.company) %></td>
+          <td><%= job.city %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    <% end %>
+</table>
+<%= link_to 'Back to Dashboard', '/dashboard' %>
