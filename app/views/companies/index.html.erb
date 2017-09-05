@@ -10,7 +10,7 @@
   <tr><% @companies.each do |company| %>  </tr>
         <td><%= link_to company.name, company_path(company) %><br></td>
         <td><button type="button" class="btn btn-light"><%= link_to "Edit", edit_company_path(company) %></button></td>
-        <td><button type="button" class="btn btn-outline-secondary"><%= link_to "Delete", company_path(company), method: "delete", data: { confirm: 'Are you sure you want to delete this company?' } %></button></td>
+        <td><button type="button" class="btn btn-outline-warning"><%= link_to "Delete", company_path(company), method: "delete", data: { confirm: 'Are you sure you want to delete this company?' } %></button></td>
       <% end %>
   </tbody>
 </thead>
