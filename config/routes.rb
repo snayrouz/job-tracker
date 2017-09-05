@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :jobs do
-    resources :comments, only: [:create]
+    resources :comments
   end
-  
-  resources :categories
+
+  resources :categories, except: :destroy
 
   get '/dashboard', to: 'dashboard#index'
 

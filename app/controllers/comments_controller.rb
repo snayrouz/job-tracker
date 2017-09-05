@@ -1,19 +1,20 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.job_id = params[:job_id]
+    @job = Job.find(params[:job_id])
+    @company = @job.company
+    @comment = @job.comments.create(comment_params)
 
     @comment.save
 
-    redirect_to job_path(@comment.job)
+    redirect_to company_job_path(@company, @job)
   end
-  
+
 
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :job_id)
   end
 
 end
