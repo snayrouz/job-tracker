@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :categories, except: :destroy
+  resources :categories
 
   get '/dashboard', to: 'dashboard#index'
 
