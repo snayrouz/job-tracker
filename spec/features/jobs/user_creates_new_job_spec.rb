@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User creates a new job" do
-  xscenario "and they see the new job" do
+  scenario "and they see the new job" do
     company = create(:company)
     job = create(:job)
     category = create_list(:category, 4).last
@@ -16,7 +16,7 @@ describe "User creates a new job" do
 
     click_button "Create Job"
 
-    expect(current_path).to eq(company_job_path(company, job))
+    expect(current_path).to eq("/companies/#{company.id}/jobs/#{Job.last.id}")
     expect(page).to have_content(company.name)
     expect(page).to have_content(job.title)
     expect(page).to have_content(job.level_of_interest)

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User sees all jobs" do
-  xscenario "a user sees all the jobs for a specific company" do
+  scenario "a user sees all the jobs for a specific company" do
     company = create(:company)
     job = create(:job)
     job_2 = create(:job)

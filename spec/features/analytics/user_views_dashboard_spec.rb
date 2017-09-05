@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "User visits the dashboard" do
   scenario 'and they see a count of jobs by level of interest' do
     create(:job, level_of_interest: 20)
-    create(:job, level_of_interest: 20)
+    create(:job, level_of_interest: 10)
     create(:job, level_of_interest: 20)
     create(:job, level_of_interest: 10)
     create(:job, level_of_interest: 40)
