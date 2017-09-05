@@ -1,11 +1,12 @@
 <h1>All Jobs Sorted By <%= params[:sort].capitalize %></h1>
 
-<table class="table text-left table-striped table-bordered">
+<table class="table text-left table-bordered">
   <thead>
     <tr>
       <% @sorted_jobs.each do |key, jobs| %>
-        <th>Interest Level <%= "#{key}:" %><th>
-        <th>City</th>
+        <th>Interest Level <%= "#{key}:" %></th>
+        <th>Company:</th>
+        <th>City:</th>
     </tr>
     </thead>
     <tbody>
