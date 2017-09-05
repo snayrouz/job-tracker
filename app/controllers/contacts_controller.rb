@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
     @contact.company_id = params[:company_id]
 
     @contact.save
-    flash[:success] = "#{contact.name} was successfully created!"
+    flash[:success] = "#{@contact.name} was successfully created!"
     redirect_to company_path(@contact.company)
   end
 
